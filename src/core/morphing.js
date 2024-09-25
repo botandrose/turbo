@@ -4,6 +4,7 @@ import { dispatch } from "../util"
 export function morphElements(currentElement, newElement, { callbacks, ...options } = {}) {
   Idiomorph.morph(currentElement, newElement, {
     ...options,
+    twoPass: true,
     callbacks: new DefaultIdiomorphCallbacks(callbacks)
   })
 }
@@ -19,6 +20,11 @@ class DefaultIdiomorphCallbacks {
 
   constructor({ beforeNodeMorphed } = {}) {
     this.#beforeNodeMorphed = beforeNodeMorphed || (() => true)
+  }
+
+  // don't mess with the contents of a permanent node when pantrying
+  beforeNodePantried = (node) => {
+    if (node.parentNode instanceof Element && node.parentNode.hasAttribute("data-turbo-permanent")) return false;
   }
 
   beforeNodeAdded = (node) => {
