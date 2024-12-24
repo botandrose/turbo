@@ -1932,10 +1932,9 @@ iconv-lite@0.4.24:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-idiomorph@~0.4.0:
+"idiomorph@https://github.com/botandrose/idiomorph.git#single-pass-build":
   version "0.4.0"
-  resolved "https://registry.yarnpkg.com/idiomorph/-/idiomorph-0.4.0.tgz#ba63a7a73cf6b8db74acec6e22b7c98341e7d548"
-  integrity sha512-VdXFpZOTXhLatJmhCWJR5oQKLXT01O6sFCJqT0/EqG71C4tYZdPJ5etvttwWsT2WKRYWz160XkNr1DUqXNMZHg==
+  resolved "https://github.com/botandrose/idiomorph.git#7c4904418ddba27e991318242423cb22f1f1a9b2"
 
 ieee754@^1.1.13:
   version "1.2.1"
